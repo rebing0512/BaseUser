@@ -13,14 +13,19 @@ use Jenson\MCore\Libraries\Helper as CoreHelper;
 class BaseController extends Controller
 {
 
-
+    /**
+     * BaseController constructor.
+     * @param Request $request
+     *
+     * construct
+     */
     public function __construct(Request $request)
     {
         parent::__construct($request);
-        if(config('mbcore_baseuser.baseuser_homeRoute'))
-            $adminHomeRoute= config('mbcore_baseuser.baseuser_homeRoute');
-        else
-            $adminHomeRoute= 'user.home';
+        $adminHomeRoute= 'user.home';
+        if(config('mbcore_baseuser.baseuser_homeRoute')) {
+            $adminHomeRoute = config('mbcore_baseuser.baseuser_homeRoute');
+        }
         view()->share('adminHomeRoute',$adminHomeRoute );
 
         CoreHelper::LoadConfig();
@@ -50,17 +55,30 @@ class BaseController extends Controller
         return $this->ret($msg,$code, $httpCode);
     }
 
-
-    // 系统级别权限
+    /**
+     * @return array
+     *
+     * 系统级别权限
+     */
     public function getSystemRoles(){
         return Helper::getSystemRoles();
     }
-    // 菜单级别权限
+
+    /**
+     * @return array
+     *
+     * 菜单级别权限
+     */
     public function getMenuRoles(){
         return Helper::getMenuRoles();
     }
 
 
+    /**
+     * @param Request $request
+     *
+     * setRolesArr
+     */
     public function setRolesArr(Request $request){
         //权限渲染菜单输出数据【每次刷新页面进行校验】
         $rolesData = User::find($request->session()->get("user.uid"));
@@ -77,7 +95,12 @@ class BaseController extends Controller
         $this->setUserRolesSession($request,$rolesJson);
     }
 
-    //设置用户的session
+    /**
+     * @param Request $request
+     * @param $rolesJson
+     *
+     * 设置用户的session
+     */
     public function setUserRolesSession(Request $request,$rolesJson){
         if($rolesJson != "is_super_user"){
             if(is_array($rolesJson)){
