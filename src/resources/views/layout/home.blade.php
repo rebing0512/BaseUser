@@ -1,4 +1,4 @@
-@inject('BaseAdminHelper', 'MBCore\BaseUser\Libraries\Helper')
+@inject('BaseAdminHelper', 'Jenson\BaseUser\Libraries\Helper')
 <!DOCTYPE html>
 <html>
 

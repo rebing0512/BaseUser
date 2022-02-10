@@ -13,7 +13,7 @@ use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 
-use MBCore\BaseUser\Console\Commands\Command;
+use Jenson\BaseUser\Console\Commands\Command;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -69,14 +69,14 @@ class ServiceProvider extends BaseServiceProvider
             // $event->connectionName
             // $event->job
             // $event->job->payload()
-//            \Log::notice("Queue::MBCore/BaseUser/before");
+//            \Log::notice("Queue::Jenson/BaseUser/before");
         });
 
         Queue::after(function (JobProcessed $event) {
             // $event->connectionName
             // $event->job
             // $event->job->payload()
-//            \Log::notice("Queue::MBCore/BaseUser/after");
+//            \Log::notice("Queue::Jenson/BaseUser/after");
         });
 
         //  任务失败事件
