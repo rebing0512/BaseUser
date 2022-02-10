@@ -1,0 +1,25 @@
+{
+  "name": "jenson0512/baseuser",
+  "description": "Jenson Base User Packages",
+  "type": "project",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jenson.Wang",
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Jenson\\BaseUser\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jenson\\BaseUser\\ServiceProvider"
+      ]
+    }
+  }
+}
