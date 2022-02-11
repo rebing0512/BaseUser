@@ -13,7 +13,7 @@ use Illuminate\Queue\Events\JobFailed;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 
-use Jenson\BaseUser\Console\Commands\Command;
+//use Jenson\BaseUser\Console\Commands\Command;
 
 class ServiceProvider extends BaseServiceProvider
 {
@@ -60,7 +60,7 @@ class ServiceProvider extends BaseServiceProvider
         // 【6】注册 Artisan 命令
         if ($this->app->runningInConsole()) {
             $this->commands([
-                Command::class,
+                //Command::class,
             ]);
         }
 
