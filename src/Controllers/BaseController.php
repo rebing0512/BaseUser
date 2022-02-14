@@ -8,7 +8,7 @@ use Jenson\BaseUser\Models\User;
 use Jenson\BaseUser\Models\Menu;
 
 use Jenson\BaseUser\Libraries\Helper;
-use Jenson\MCore\Libraries\Helper as CoreHelper;
+use Jenson\Core\Libraries\Helper as CoreHelper;
 
 class BaseController extends Controller
 {
