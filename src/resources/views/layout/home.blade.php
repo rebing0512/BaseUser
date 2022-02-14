@@ -370,12 +370,12 @@
                                 <div class="text-center link-block" style="float: left;">
                                     @if(config('mbcore_baseuser.baseuser_password_change_route'))
                                         <a class="J_menuItem" href="{{ route(config('mbcore_baseuser.baseuser_password_change_route')) }}">
-                                            <strong style="    margin-left: 40%;">修改密码 </strong>
+                                            <strong> 修改密码 </strong>
                                             <i class="fa fa-angle-right"></i>
                                         </a>
                                     @else
                                         <a class="J_menuItem" href="{{ route('user.personal.changePassword') }}">
-                                            <strong style="    margin-left: 40%;">修改密码 </strong>
+                                            <strong> 修改密码 </strong>
                                             <i class="fa fa-angle-right"></i>
                                         </a>
                                     @endif
