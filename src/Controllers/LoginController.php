@@ -188,11 +188,12 @@ Class LoginController extends BaseController
     {
         if ($request->session()->has('user.is_login')) {
             $is_forgotten = session()->flush(); //删除所有session数据
-            if ($is_forgotten === null)
-                if(config('mbcore_baseuser.baseuser_loginView')){
+            if ($is_forgotten === null) {
+                if (config('mbcore_baseuser.baseuser_loginView') != 'login') {
                     return redirect()->route(config('mbcore_baseuser.baseuser_loginView'));
                 }
-            return redirect()->route('user.login.login');
+                return redirect()->route('user.login.login');
+            }
         }
         return redirect()->back()->withErrors('系统异常，退出失败,请重试');
     }
