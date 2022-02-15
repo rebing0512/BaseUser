@@ -11,6 +11,7 @@ class User extends Authenticatable
     use Notifiable;
     // 软删除
     use SoftDeletes;
+
     protected $table = 'mbuser_users';
     /**
      * The attributes that are mass assignable.
