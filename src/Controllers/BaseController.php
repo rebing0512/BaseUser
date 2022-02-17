@@ -82,13 +82,13 @@ class BaseController extends Controller
     public function setRolesArr(Request $request){
         //权限渲染菜单输出数据【每次刷新页面进行校验】
         $rolesData = User::find($request->session()->get("user.uid"));
-//        $rolesData = User::find(session("user.uid"))->toArray();
         $rolesJson = $rolesData["roles"];
-        if($rolesJson != "is_super_user"){
-            $rolesArr = json_decode($rolesJson,true);
-        }else{
-            $rolesArr = ['system'=> $rolesJson,'menu'=> $rolesJson];
-        }
+        $rolesArr = ['system'=> $rolesJson,'menu'=> $rolesJson];
+//        if($rolesJson != "is_super_user"){
+//            $rolesArr = json_decode($rolesJson,true);
+//        }else{
+//            $rolesArr = ['system'=> $rolesJson,'menu'=> $rolesJson];
+//        }
         view()->share('rolesArr',$rolesArr );
         //dd(gettype($rolesArr));
         //刷新设置session，更新权限验证内容
